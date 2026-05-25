@@ -2,19 +2,23 @@
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/chrisandrews1012/olist-analytics)
 ![Python Version](https://img.shields.io/badge/python-3.11-blue)
-![Stack](https://img.shields.io/badge/stack-PostgreSQL%20%7C%20SQLAlchemy%20%7C%20pandas%20%7C%20Jupyter-blue)
+![Stack](https://img.shields.io/badge/stack-PostgreSQL%20%7C%20SQLAlchemy%20%7C%20pandas-blue)
 
-SQL analytics project built on the [Olist Brazilian E-Commerce dataset](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce), 100,000 real orders from a Brazilian marketplace between 2016 and 2018.
+Analytics project exploring 100k real Brazilian e-commerce orders with PostgreSQL, SQL and Python.
 
 ## Problem Statement
 
-Raw transactional data across 8 CSVs spanning customers, orders, products, sellers, payments, reviews, and geolocation. The goal is to load it into a structured PostgreSQL database and use it as a foundation for SQL practice and analysis.
+Raw transactional data across 8 CSVs spanning customers, orders, products, sellers, payments, reviews and geolocation. The goal is to load it into a structured PostgreSQL database and use it as a foundation for SQL practice and analysis.
 
 ## Approach
 
-A Python load script ingests the CSVs into Postgres in dependency order, respecting foreign key constraints. The schema is defined as plain SQL and runs automatically on container startup. Two notebooks sit on top: one for structured SQL practice building from basic queries up to window functions and CTEs, one for analysis.
+A Python load script ingests the CSVs into Postgres in dependency order, respecting foreign key constraints. The schema is defined as plain SQL and runs automatically on container startup. Three notebooks cover SQL fundamentals, core business queries, and advanced analysis.
 
 ## Results
+
+This project focused on SQL and analytics practice rather than generating production results. The three notebooks work through progressively complex SQL concepts on a real dataset.
+
+The fundamentals notebook covers SELECT, filtering, aggregations, joins, subqueries, CTEs and window functions including RANK, ROW_NUMBER, LAG and LEAD. The core queries notebook applies these concepts to real business questions around revenue, order volume, customer behaviour and seller performance. The advanced analysis notebook goes further with RFM customer segmentation, cohort retention analysis, customer lifetime value, geographic breakdowns, and market basket analysis.
 
 ## How to Run
 
@@ -57,8 +61,9 @@ olist-analytics/
 │       └── handler/
 │           └── cursor.py
 ├── notebooks/
-│   ├── sql_practice.ipynb
-│   └── olist_analysis.ipynb
+│   ├── 01_sql_fundamentals.ipynb
+│   ├── 02_core_queries.ipynb
+│   └── 03_advanced_analysis.ipynb
 ├── data/
 │   ├── raw/
 │   ├── interim/
